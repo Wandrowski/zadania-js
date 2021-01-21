@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SoundKit</title>
+		<style>
+			body {
+				overflow: hidden;
+			}
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				font-family: Arial, Helvetica, sans-serif;
+				display: flex;
+				flex-wrap: wrap;
+				height: 100vh;
+				width: 100%;
+			}
+			.box {
+				flex: 1 0 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				font-size: 60px;
+				font-weight: bolder;
+				text-shadow: 1px 1px 3px black;
+				transition: 0.1s all;
+			}
+			.box1 {
+				background-color: #fb7756;
+			}
+			.box2 {
+				background-color: #facd60;
+			}
+			.box3 {
+				background-color: #fdfa66;
+			}
+			.box4 {
+				background-color: #1ac0c6;
+			}
+			audio {
+				display: none;
+			}
+			.controls {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 500px;
+				height: 50px;
+				background-color: white;
+				display: flex;
+				justify-content: stretch;
+				border-radius: 5px 5px 0 0;
+				box-shadow: 0 3px 6px rgba(97, 86, 86, 0.2), 0 3px 6px rgba(0, 0, 0, 0.3);
+			}
+			.controls > div {
+				flex: 1;
+				color: black;
+				font-size: 18px;
+				font-weight: bold;
+				font-family: Arial, Helvetica, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				transition: 0.1s all;
+			}
+			.divider {
+				background-color: rgba(0, 0, 0, 0.3);
+				width: 2px;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<audio src="assets/clap.wav" data-element="box-a" controls id="sound-a"></audio>
+		<audio src="assets/hihat.wav" data-element="box-s" controls id="sound-s"></audio>
+		<audio src="assets/kick.wav" data-element="box-d" controls id="sound-d"></audio>
+		<audio src="assets/openhat.wav" data-element="box-f" controls id="sound-f"></audio>
+		<div class="container">
+			<div id="box-a" class="box box1">A</div>
+			<div id="box-s" class="box box2">S</div>
+			<div id="box-d" class="box box3">D</div>
+			<div id="box-f" class="box box4">F</div>
+		</div>
+		<div class="controls">
+			<div id="play"><span>Play</span></div>
+			<span class="divider"></span>
+			<div id="stop"><span>Stop</span></div>
+			<span class="divider"></span>
+			<div id="record1"><span>Rec #1</span></div>
+			<span class="divider"></span>
+			<div id="record2"><span>Rec #2</span></div>
+			<span class="divider"></span>
+			<div id="record3"><span>Rec #3</span></div>
+			<span class="divider"></span>
+			<div id="record4"><span>Rec #4</span></div>
+		</div>
+		<script src="./assets/script.js"></script>
+	</body>
+</html>

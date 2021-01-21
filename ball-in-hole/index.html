@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball in hole</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+        background-color: rgb(63, 69, 75);
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      canvas {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+      #timer {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        color: white;
+        display: none;
+        font-family: Arial;
+      }
+      #overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.37);
+      }
+      #start,
+      #game-ended {
+        border: none;
+        color: white;
+        outline: none;
+        padding: 10px 20px;
+        font-size: 30px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+      #start {
+        background-color: #8bc34a;
+      }
+      #game-ended {
+        display: none;
+        background-color: #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <div id="timer">00:00s</div>
+    <div id="overlay">
+      <button id="start">Start</button>
+      <div id="game-ended"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
